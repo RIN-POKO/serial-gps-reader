@@ -42,19 +42,27 @@ This project is a lightweight C++ application designed to interface with GPS dev
 ## Example Output
 
 ```plaintext
+$ ./serial_gps_reader -d /dev/ttyUSB0 -b 38400
 Serial port opened: /dev/ttyUSB0
 Baudrate: 38400
 Start reading GPS data...
 --------------------------
-elapsed time (s): 1
+elapsed time (s): 0
 [Get location data]
-UTC Time(usec): 72441000000
+UTC Time(usec): 80158000000
 Fix type: 2
 Latitude: 351551590
 Longitude: 1369662918
 Altitude: 77300
 --------------------------
-
+elapsed time (s): 1
+[Get location data]
+UTC Time(usec): 80159000000
+Fix type: 2
+Latitude: 351549301
+Longitude: 1369662760
+Altitude: 154800
+--------------------------
 ```
 
 ## Future Improvements
