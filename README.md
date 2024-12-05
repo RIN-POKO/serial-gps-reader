@@ -1,6 +1,7 @@
 # serial-gps-reader
 
-This project is a lightweight C++ application designed to interface with GPS devices via serial communication. It reads, validates, and parses NMEA-formatted GPS data in real-time, providing key location information such as latitude, longitude, altitude, and fix type.
+This project is a lightweight C++ application designed to interface with GPS devices via serial communication. It is specifically developed and tested for the Beitian BE-180 GPS module, but it may also work with other NMEA-compatible GPS devices. The program reads, validates, and parses NMEA-formatted GPS data in real-time, providing key location information such as latitude, longitude, altitude, and fix type.
+
 
 ## Features
 
