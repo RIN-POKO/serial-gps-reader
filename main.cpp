@@ -26,7 +26,8 @@ bool is_get_gga = false;
 bool debug_mode = false;
 
 char* port_name = (char*)"/dev/ttyUSB0";
-int baudrate = 38400;
+int baudrate = B38400;
+int input_baudrate = 38400;
 
 // Validate the checksum of the NMEA data
 bool verifyChecksum(const std::string& sentence) {
@@ -207,6 +208,30 @@ void parse_command_line(int argc, char* argv[]) {
 		if (strcmp(argv[i], "-b") == 0 || strcmp(argv[i], "--baud") == 0) {
 			if (argc > i + 1) {
 				i++;
+                input_baudrate = atoi(argv[i]);
+                switch (input_baudrate)
+                {
+                case 9600:
+                    baudrate = B9600;
+                    break;
+                case 19200:
+                    baudrate = B19200;
+                    break;
+                case 38400:
+                    baudrate = B38400;
+                    break;
+                case 57600:
+                    baudrate = B57600;
+                    break;
+                case 115200:
+                    baudrate = B115200;
+                    break;
+                default:
+                    std::cerr << "Invalid baudrate: " << input_baudrate << "\n";
+                    throw EXIT_FAILURE;
+                    break;
+                }
+
 				baudrate = atoi(argv[i]);
 			} else {
 				printf("%s\n",commandline_usage);
